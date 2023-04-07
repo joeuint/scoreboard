@@ -21,6 +21,12 @@ jobs:
         run: |
           npm install
           npm run build
+          
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: ./dist
   deploy:
     runs-on: ubuntu-latest
     steps:
